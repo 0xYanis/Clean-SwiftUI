@@ -9,6 +9,7 @@ import Foundation
 
 protocol UserListDisplayLogic: AnyObject {
     func showPeople(_ viewModel: [UserListModel.ViewModel])
+    func showMessage(_ message: String)
 }
 
 class UserListViewModel: ObservableObject {
@@ -28,6 +29,10 @@ extension UserListViewModel: UserListDisplayLogic {
     
     func showPeople(_ viewModel: [UserListModel.ViewModel]) {
         self.people = viewModel
+    }
+    
+    func showMessage(_ message: String) {
+        
     }
     
 }

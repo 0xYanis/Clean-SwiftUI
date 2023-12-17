@@ -30,7 +30,7 @@ class UserListInteractor: UserListBusinessLogic {
     private func validation(list: [UserListModel.Response]) async {
         await MainActor.run {
             if list.isEmpty {
-                
+                presenter?.presentError()
             } else {
                 presenter?.presentPeople(list)
             }
