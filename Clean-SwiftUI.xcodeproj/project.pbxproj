@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		097251862B2F09030059A62C /* Clean_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251852B2F09030059A62C /* Clean_SwiftUIApp.swift */; };
-		097251882B2F09030059A62C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251872B2F09030059A62C /* ContentView.swift */; };
 		0972518A2B2F09050059A62C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097251892B2F09050059A62C /* Assets.xcassets */; };
 		0972518D2B2F09050059A62C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0972518C2B2F09050059A62C /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +15,6 @@
 /* Begin PBXFileReference section */
 		097251822B2F09030059A62C /* Clean-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		097251852B2F09030059A62C /* Clean_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clean_SwiftUIApp.swift; sourceTree = "<group>"; };
-		097251872B2F09030059A62C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		097251892B2F09050059A62C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0972518C2B2F09050059A62C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,10 +49,8 @@
 		097251842B2F09030059A62C /* Clean-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				097251852B2F09030059A62C /* Clean_SwiftUIApp.swift */,
-				097251872B2F09030059A62C /* ContentView.swift */,
-				097251892B2F09050059A62C /* Assets.xcassets */,
-				0972518B2B2F09050059A62C /* Preview Content */,
+				097251932B2F091A0059A62C /* App */,
+				097251942B2F091F0059A62C /* Resources */,
 			);
 			path = "Clean-SwiftUI";
 			sourceTree = "<group>";
@@ -65,6 +61,23 @@
 				0972518C2B2F09050059A62C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		097251932B2F091A0059A62C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				097251852B2F09030059A62C /* Clean_SwiftUIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		097251942B2F091F0059A62C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				097251892B2F09050059A62C /* Assets.xcassets */,
+				0972518B2B2F09050059A62C /* Preview Content */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +150,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097251882B2F09030059A62C /* ContentView.swift in Sources */,
 				097251862B2F09030059A62C /* Clean_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +278,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Clean-SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Clean-SwiftUI/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 2B85PH5M9P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -295,7 +307,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Clean-SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Clean-SwiftUI/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 2B85PH5M9P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
