@@ -24,7 +24,17 @@ struct UserListView: View {
     var currentView: some View {
         if viewModel.message.isEmpty {
             List(viewModel.people) { person in
-                Text(person.name)
+                HStack(spacing: 15) {
+                    Text("\(person.id)")
+                        .font(.caption)
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(person.name)
+                        Text(person.email)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .lineLimit(1)
+                    }
+                }
             }
             .searchable(text: $viewModel.searchText)
             .onAppear(perform: viewModel.request)
