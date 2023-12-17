@@ -10,6 +10,13 @@
 		097251862B2F09030059A62C /* Clean_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251852B2F09030059A62C /* Clean_SwiftUIApp.swift */; };
 		0972518A2B2F09050059A62C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097251892B2F09050059A62C /* Assets.xcassets */; };
 		0972518D2B2F09050059A62C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0972518C2B2F09050059A62C /* Preview Assets.xcassets */; };
+		0972519F2B2F0B6F0059A62C /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0972519E2B2F0B6F0059A62C /* UserListView.swift */; };
+		097251A12B2F0B7D0059A62C /* UserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251A02B2F0B7D0059A62C /* UserListPresenter.swift */; };
+		097251A32B2F0B870059A62C /* UserListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251A22B2F0B870059A62C /* UserListInteractor.swift */; };
+		097251A52B2F0B9E0059A62C /* UserListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251A42B2F0B9E0059A62C /* UserListRepository.swift */; };
+		097251A72B2F0BB20059A62C /* UserListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251A62B2F0BB20059A62C /* UserListModel.swift */; };
+		097251A92B2F0BFD0059A62C /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251A82B2F0BFD0059A62C /* UserListViewModel.swift */; };
+		097251AB2B2F0E230059A62C /* UserListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251AA2B2F0E230059A62C /* UserListAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +24,13 @@
 		097251852B2F09030059A62C /* Clean_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clean_SwiftUIApp.swift; sourceTree = "<group>"; };
 		097251892B2F09050059A62C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0972518C2B2F09050059A62C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0972519E2B2F0B6F0059A62C /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		097251A02B2F0B7D0059A62C /* UserListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPresenter.swift; sourceTree = "<group>"; };
+		097251A22B2F0B870059A62C /* UserListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListInteractor.swift; sourceTree = "<group>"; };
+		097251A42B2F0B9E0059A62C /* UserListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRepository.swift; sourceTree = "<group>"; };
+		097251A62B2F0BB20059A62C /* UserListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListModel.swift; sourceTree = "<group>"; };
+		097251A82B2F0BFD0059A62C /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		097251AA2B2F0E230059A62C /* UserListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				097251932B2F091A0059A62C /* App */,
+				097251952B2F09980059A62C /* Source */,
 				097251942B2F091F0059A62C /* Resources */,
 			);
 			path = "Clean-SwiftUI";
@@ -78,6 +93,84 @@
 				0972518B2B2F09050059A62C /* Preview Content */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		097251952B2F09980059A62C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				097251962B2F09A10059A62C /* Scenes */,
+				097251982B2F09B30059A62C /* Services */,
+				097251972B2F09AB0059A62C /* Managers */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		097251962B2F09A10059A62C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				097251992B2F09EA0059A62C /* UserList */,
+				0972519A2B2F0B010059A62C /* TodoList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		097251972B2F09AB0059A62C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		097251982B2F09B30059A62C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		097251992B2F09EA0059A62C /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				097251AA2B2F0E230059A62C /* UserListAssembly.swift */,
+				0972519B2B2F0B1C0059A62C /* Presentation */,
+				0972519C2B2F0B240059A62C /* Domain */,
+				0972519D2B2F0B360059A62C /* Data */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		0972519A2B2F0B010059A62C /* TodoList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TodoList;
+			sourceTree = "<group>";
+		};
+		0972519B2B2F0B1C0059A62C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0972519E2B2F0B6F0059A62C /* UserListView.swift */,
+				097251A82B2F0BFD0059A62C /* UserListViewModel.swift */,
+				097251A02B2F0B7D0059A62C /* UserListPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0972519C2B2F0B240059A62C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				097251A22B2F0B870059A62C /* UserListInteractor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0972519D2B2F0B360059A62C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				097251A42B2F0B9E0059A62C /* UserListRepository.swift */,
+				097251A62B2F0BB20059A62C /* UserListModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +243,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097251A72B2F0BB20059A62C /* UserListModel.swift in Sources */,
 				097251862B2F09030059A62C /* Clean_SwiftUIApp.swift in Sources */,
+				097251A92B2F0BFD0059A62C /* UserListViewModel.swift in Sources */,
+				097251A32B2F0B870059A62C /* UserListInteractor.swift in Sources */,
+				097251AB2B2F0E230059A62C /* UserListAssembly.swift in Sources */,
+				097251A12B2F0B7D0059A62C /* UserListPresenter.swift in Sources */,
+				097251A52B2F0B9E0059A62C /* UserListRepository.swift in Sources */,
+				0972519F2B2F0B6F0059A62C /* UserListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
