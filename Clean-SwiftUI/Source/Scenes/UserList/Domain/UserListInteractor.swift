@@ -21,7 +21,20 @@ class UserListInteractor: UserListBusinessLogic {
     }
     
     func searchPeople(_ request: UserListModel.Request) {
-        
+        Task {
+            let list = await webRepository?.fetchUserList(query: request.text) ?? []
+            await validation(list: list)
+        }
+    }
+    
+    private func validation(list: [UserListModel.Response]) async {
+        await MainActor.run {
+            if list.isEmpty {
+                
+            } else {
+                presenter?.presentPeople(list)
+            }
+        }
     }
     
 }
