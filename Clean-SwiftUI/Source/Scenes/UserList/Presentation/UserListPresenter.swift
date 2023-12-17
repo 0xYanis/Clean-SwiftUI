@@ -8,14 +8,14 @@
 import Foundation
 
 protocol UserListPresentationLogic: AnyObject {
-    func presentPeople(_ response: UserListModel.Response)
+    func presentPeople(_ response: [UserListModel.Response])
 }
 
 class UserListPresenter: UserListPresentationLogic {
     
     weak var viewModel: UserListDisplayLogic?
     
-    func presentPeople(_ response: UserListModel.Response) {
+    func presentPeople(_ response: [UserListModel.Response]) {
         
     }
     
