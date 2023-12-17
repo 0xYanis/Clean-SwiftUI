@@ -13,7 +13,27 @@ struct UserListView: View {
     var viewModel: UserListViewModel
     
     var body: some View {
-        Text("User List")
+        NavigationStack {
+            VStack {
+                currentView
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var currentView: some View {
+        if viewModel.message.isEmpty {
+            List(viewModel.people) { person in
+                Text(person.name)
+            }
+            .searchable(text: $viewModel.searchText)
+            .onAppear(perform: viewModel.request)
+            .navigationTitle("People")
+        } else {
+            ProgressView()
+            Text(viewModel.message)
+                .searchable(text: $viewModel.searchText)
+        }
     }
     
 }

@@ -18,6 +18,7 @@ class UserListViewModel: ObservableObject {
     
     @Published var people = [UserListModel.ViewModel]()
     @Published var searchText = "" { didSet { request() } }
+    @Published var message = ""
     
     func request() {
         interactor?.searchPeople(.init(text: searchText))
@@ -28,11 +29,13 @@ class UserListViewModel: ObservableObject {
 extension UserListViewModel: UserListDisplayLogic {
     
     func showPeople(_ viewModel: [UserListModel.ViewModel]) {
+        message.removeAll()
         self.people = viewModel
     }
     
     func showMessage(_ message: String) {
-        
+        self.people.removeAll()
+        self.message = message
     }
     
 }

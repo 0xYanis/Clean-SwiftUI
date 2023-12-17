@@ -29,6 +29,6 @@ final class UserListRepositoryImpl: UserListRepository {
 
 private extension UserListRepositoryImpl {
     func newUrlString(_ query: String) -> String {
-        "https://jsonplaceholder.typicode.com/users?=\(query)"
+        "https://jsonplaceholder.typicode.com/users?q=\(query)"
     }
 }

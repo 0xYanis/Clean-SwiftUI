@@ -32,7 +32,7 @@ class UserListPresenter: UserListPresentationLogic {
     }
     
     func presentError() {
-        viewModel?.showMessage("Неправильный ввод 😯")
+        viewModel?.showMessage("Invalid input 😯")
     }
     
 }
