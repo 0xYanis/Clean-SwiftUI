@@ -26,6 +26,14 @@ At the same time, this repository shows how easy it is to create unnecessary ent
 - **User List Screen**: Displays a list of users.
 - **User Todos Screen**: Displays the todos for the selected user.
 
+<html>
+ <body>
+  <p>
+    <img src="Resources/diagram.png">
+  </p>
+ </body>
+</html>
+
 ## Borrowing
 
 The following borrowings were used in this application:
