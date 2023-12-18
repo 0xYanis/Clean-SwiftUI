@@ -32,6 +32,7 @@ struct TodoListView: View {
             }
             Spacer()
         }
+        .searchable(text: $viewModel.searchText)
         .onAppear(perform: viewModel.request)
         .navigationTitle(viewModel.person.name)
         .navigationBarTitleDisplayMode(.inline)

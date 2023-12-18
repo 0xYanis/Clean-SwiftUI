@@ -15,11 +15,13 @@ class TodoListViewModel: ObservableObject {
     
     var interactor: TodoListBusinessLogic?
     
-    @Published
-    var todos = [TodoListModel.ViewModel]()
+    @Published var todos = [TodoListModel.ViewModel]()
+    @Published var person: UserListModel.ViewModel
+    @Published var searchText = "" {
+        didSet { search() }
+    }
     
-    @Published
-    var person: UserListModel.ViewModel
+    private var allTodos = [TodoListModel.ViewModel]()
     
     init(person: UserListModel.ViewModel) {
         self.person = person
@@ -29,12 +31,24 @@ class TodoListViewModel: ObservableObject {
         interactor?.fetchTodos(.init(userId: person.id))
     }
     
+    private func search() {
+        if searchText.isEmpty {
+            self.todos = allTodos
+        } else {
+            self.todos = allTodos.filter {
+                $0.title.localizedCaseInsensitiveContains(searchText) ||
+                "\($0.id)".localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
+    
 }
 
 extension TodoListViewModel: TodoListDisplayLogic {
     
     func displayTodos(_ viewModel: [TodoListModel.ViewModel]) {
-        self.todos = viewModel
+        self.allTodos = viewModel
+        search()
     }
     
 }
