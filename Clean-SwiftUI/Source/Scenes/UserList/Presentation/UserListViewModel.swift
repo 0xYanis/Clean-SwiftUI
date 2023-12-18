@@ -15,7 +15,6 @@ protocol UserListDisplayLogic: AnyObject {
 class UserListViewModel: ObservableObject {
     
     var interactor: UserListBusinessLogic?
-    var router: UserListNavigation?
     
     @Published var people = [UserListModel.ViewModel]()
     @Published var searchText = "" { didSet { request() } }
@@ -23,10 +22,6 @@ class UserListViewModel: ObservableObject {
     
     func request() {
         interactor?.searchPeople(.init(text: searchText))
-    }
-    
-    func showUserTodos(userId: Int) {
-        router?.showUserTodos(id: userId)
     }
     
 }

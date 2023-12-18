@@ -7,9 +7,18 @@
 
 import SwiftUI
 
-enum Page: Hashable {
+enum Page: String, Identifiable {
     case userList
     case todoList
+    
+    var id: String {
+        self.rawValue
+    }
+}
+
+protocol Routable: AnyObject {
+    func pushTodos(id: Int)
+    func pushUsers()
 }
 
 class Coordinator: ObservableObject {
@@ -17,7 +26,7 @@ class Coordinator: ObservableObject {
     @Published
     var path = NavigationPath()
     
-    func push(page: Page) {
+    func push(page: Page, id: Int? = nil) {
         path.append(page)
     }
     

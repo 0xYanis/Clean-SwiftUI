@@ -19,12 +19,7 @@ struct ContentView: View {
                     coordinator.build(page: page)
                 }
         }
+        .environmentObject(coordinator)
     }
     
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
 }

@@ -12,6 +12,9 @@ struct UserListView: View {
     @StateObject
     var viewModel: UserListViewModel
     
+    @EnvironmentObject
+    private var coordinator: Coordinator
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -24,17 +27,12 @@ struct UserListView: View {
     var currentView: some View {
         if viewModel.message.isEmpty {
             List(viewModel.people) { person in
-                HStack(spacing: 15) {
-                    Text("\(person.id)")
-                        .font(.caption)
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(person.name)
-                        Text(person.email)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                            .lineLimit(1)
-                    }
+                Button {
+                    coordinator.push(page: .todoList)
+                } label: {
+                    UserListCell(person: person)
                 }
+                .buttonStyle(.plain)
             }
             .searchable(text: $viewModel.searchText)
             .onAppear(perform: viewModel.request)
@@ -46,6 +44,26 @@ struct UserListView: View {
         }
     }
     
+}
+
+struct UserListCell: View {
+    var person: UserListModel.ViewModel
+    
+    var body: some View {
+        HStack(spacing: 15) {
+            Text("\(person.id)")
+                .font(.caption)
+            
+            VStack(alignment: .leading, spacing: 5) {
+                Text(person.name)
+                
+                Text(person.email)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .lineLimit(1)
+            }
+        }
+    }
 }
 
 #if DEBUG
