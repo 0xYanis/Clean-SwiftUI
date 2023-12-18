@@ -40,7 +40,7 @@ class Coordinator: ObservableObject {
         case .userList:
             UserListAssembly.shared.build()
         case .todoList:
-            EmptyView()
+            TodoListAssembly.shared.build()
         }
     }
     

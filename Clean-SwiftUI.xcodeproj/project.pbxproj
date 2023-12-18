@@ -20,6 +20,12 @@
 		097251AF2B2F17730059A62C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097251AE2B2F17730059A62C /* ApiService.swift */; };
 		09B5754B2B3067A6009CABC5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5754A2B3067A6009CABC5 /* Coordinator.swift */; };
 		09B575512B30690F009CABC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B575502B30690F009CABC5 /* ContentView.swift */; };
+		09B5755B2B3076AE009CABC5 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5755A2B3076AE009CABC5 /* TodoListView.swift */; };
+		09B5755D2B307705009CABC5 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5755C2B307705009CABC5 /* TodoListViewModel.swift */; };
+		09B5755F2B30773D009CABC5 /* TodoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5755E2B30773D009CABC5 /* TodoListPresenter.swift */; };
+		09B575612B307766009CABC5 /* TodoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B575602B307766009CABC5 /* TodoListInteractor.swift */; };
+		09B575632B3077C1009CABC5 /* TodoListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B575622B3077C1009CABC5 /* TodoListAssembly.swift */; };
+		09B575652B30787E009CABC5 /* TodoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B575642B30787E009CABC5 /* TodoListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,12 @@
 		097251AE2B2F17730059A62C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		09B5754A2B3067A6009CABC5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		09B575502B30690F009CABC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		09B5755A2B3076AE009CABC5 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		09B5755C2B307705009CABC5 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
+		09B5755E2B30773D009CABC5 /* TodoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListPresenter.swift; sourceTree = "<group>"; };
+		09B575602B307766009CABC5 /* TodoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListInteractor.swift; sourceTree = "<group>"; };
+		09B575622B3077C1009CABC5 /* TodoListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListAssembly.swift; sourceTree = "<group>"; };
+		09B575642B30787E009CABC5 /* TodoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +161,9 @@
 		0972519A2B2F0B010059A62C /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				09B575572B30765C009CABC5 /* Presentation */,
+				09B575582B307662009CABC5 /* Domain */,
+				09B575592B307669009CABC5 /* Data */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -185,9 +200,36 @@
 			children = (
 				09B5754A2B3067A6009CABC5 /* Coordinator.swift */,
 				097251AA2B2F0E230059A62C /* UserListAssembly.swift */,
+				09B575622B3077C1009CABC5 /* TodoListAssembly.swift */,
 				09B575502B30690F009CABC5 /* ContentView.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		09B575572B30765C009CABC5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				09B5755A2B3076AE009CABC5 /* TodoListView.swift */,
+				09B5755C2B307705009CABC5 /* TodoListViewModel.swift */,
+				09B5755E2B30773D009CABC5 /* TodoListPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		09B575582B307662009CABC5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				09B575602B307766009CABC5 /* TodoListInteractor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		09B575592B307669009CABC5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				09B575642B30787E009CABC5 /* TodoListModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +302,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B5755F2B30773D009CABC5 /* TodoListPresenter.swift in Sources */,
+				09B575612B307766009CABC5 /* TodoListInteractor.swift in Sources */,
 				097251A72B2F0BB20059A62C /* UserListModel.swift in Sources */,
+				09B575652B30787E009CABC5 /* TodoListModel.swift in Sources */,
+				09B575632B3077C1009CABC5 /* TodoListAssembly.swift in Sources */,
 				097251AD2B2F12A40059A62C /* UserListViewModel.swift in Sources */,
+				09B5755D2B307705009CABC5 /* TodoListViewModel.swift in Sources */,
+				09B5755B2B3076AE009CABC5 /* TodoListView.swift in Sources */,
 				09B575512B30690F009CABC5 /* ContentView.swift in Sources */,
 				09B5754B2B3067A6009CABC5 /* Coordinator.swift in Sources */,
 				097251862B2F09030059A62C /* Clean_SwiftUIApp.swift in Sources */,
