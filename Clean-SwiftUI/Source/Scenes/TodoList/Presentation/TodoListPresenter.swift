@@ -8,11 +8,15 @@
 import Foundation
 
 protocol TodoListPresentationLogic: AnyObject {
-    
+    func presentTodos(_ response: [TodoListModel.Response])
 }
 
 class TodoListPresenter: TodoListPresentationLogic {
     
     weak var viewModel: TodoListDisplayLogic?
+    
+    func presentTodos(_ response: [TodoListModel.Response]) {
+        
+    }
     
 }
