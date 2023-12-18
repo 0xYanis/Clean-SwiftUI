@@ -18,8 +18,15 @@ class TodoListViewModel: ObservableObject {
     @Published
     var todos = [TodoListModel.ViewModel]()
     
+    @Published
+    var person: UserListModel.ViewModel
+    
+    init(person: UserListModel.ViewModel) {
+        self.person = person
+    }
+    
     func request() {
-        
+        interactor?.fetchTodos(.init(userId: person.id))
     }
     
 }

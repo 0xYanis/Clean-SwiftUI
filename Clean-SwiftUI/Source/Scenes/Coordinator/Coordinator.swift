@@ -7,18 +7,9 @@
 
 import SwiftUI
 
-enum Page: String, Identifiable {
+enum Page: Hashable {
     case userList
-    case todoList
-    
-    var id: String {
-        self.rawValue
-    }
-}
-
-protocol Routable: AnyObject {
-    func pushTodos(id: Int)
-    func pushUsers()
+    case todoList(person: UserListModel.ViewModel)
 }
 
 class Coordinator: ObservableObject {
@@ -26,7 +17,7 @@ class Coordinator: ObservableObject {
     @Published
     var path = NavigationPath()
     
-    func push(page: Page, id: Int? = nil) {
+    func push(page: Page) {
         path.append(page)
     }
     
@@ -39,8 +30,8 @@ class Coordinator: ObservableObject {
         switch page {
         case .userList:
             UserListAssembly.shared.build()
-        case .todoList:
-            TodoListAssembly.shared.build()
+        case .todoList(let person):
+            TodoListAssembly.shared.build(for: person)
         }
     }
     

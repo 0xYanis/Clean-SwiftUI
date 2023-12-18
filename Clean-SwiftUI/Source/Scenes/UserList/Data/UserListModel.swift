@@ -42,7 +42,7 @@ extension UserListModel {
 
 extension UserListModel {
     /// model to view from presenter
-    struct ViewModel: Identifiable {
+    struct ViewModel: Identifiable, Hashable {
         let id: Int
         let name, username, email: String
         let address: String

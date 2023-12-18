@@ -16,7 +16,13 @@ class TodoListPresenter: TodoListPresentationLogic {
     weak var viewModel: TodoListDisplayLogic?
     
     func presentTodos(_ response: [TodoListModel.Response]) {
-        
+        let models = response.map {
+            TodoListModel.ViewModel(
+                id: $0.id,
+                title: $0.title,
+                completed: $0.completed)
+        }
+        viewModel?.displayTodos(models)
     }
     
 }

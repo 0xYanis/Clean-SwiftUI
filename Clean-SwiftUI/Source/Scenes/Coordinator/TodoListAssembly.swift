@@ -10,8 +10,8 @@ import SwiftUI
 class TodoListAssembly {
     static let shared = TodoListAssembly()
     
-    func build() -> some View {
-        let viewModel = TodoListViewModel()
+    func build(for person: UserListModel.ViewModel) -> some View {
+        let viewModel = TodoListViewModel(person: person)
         let interactor = TodoListInteractor()
         let presenter = TodoListPresenter()
         

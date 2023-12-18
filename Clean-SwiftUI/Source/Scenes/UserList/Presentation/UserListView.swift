@@ -28,7 +28,7 @@ struct UserListView: View {
     var currentView: some View {
         if viewModel.message.isEmpty {
             List(viewModel.people) { person in
-                Button { coordinator.push(page: .todoList)
+                Button { coordinator.push(page: .todoList(person: person))
                 } label: {
                     UserListCell(person: person)
                 }

@@ -26,6 +26,7 @@
 		09B575612B307766009CABC5 /* TodoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B575602B307766009CABC5 /* TodoListInteractor.swift */; };
 		09B575632B3077C1009CABC5 /* TodoListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B575622B3077C1009CABC5 /* TodoListAssembly.swift */; };
 		09B575652B30787E009CABC5 /* TodoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B575642B30787E009CABC5 /* TodoListModel.swift */; };
+		09B575672B307BF7009CABC5 /* TodoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B575662B307BF7009CABC5 /* TodoListRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		09B575602B307766009CABC5 /* TodoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListInteractor.swift; sourceTree = "<group>"; };
 		09B575622B3077C1009CABC5 /* TodoListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListAssembly.swift; sourceTree = "<group>"; };
 		09B575642B30787E009CABC5 /* TodoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListModel.swift; sourceTree = "<group>"; };
+		09B575662B307BF7009CABC5 /* TodoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				09B575642B30787E009CABC5 /* TodoListModel.swift */,
+				09B575662B307BF7009CABC5 /* TodoListRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				097251862B2F09030059A62C /* Clean_SwiftUIApp.swift in Sources */,
 				097251A32B2F0B870059A62C /* UserListInteractor.swift in Sources */,
 				097251AB2B2F0E230059A62C /* UserListAssembly.swift in Sources */,
+				09B575672B307BF7009CABC5 /* TodoListRepository.swift in Sources */,
 				097251AF2B2F17730059A62C /* ApiService.swift in Sources */,
 				097251A12B2F0B7D0059A62C /* UserListPresenter.swift in Sources */,
 				097251A52B2F0B9E0059A62C /* UserListRepository.swift in Sources */,
