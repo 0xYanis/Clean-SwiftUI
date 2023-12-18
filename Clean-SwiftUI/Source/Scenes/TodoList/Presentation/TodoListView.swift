@@ -17,14 +17,10 @@ struct TodoListView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
-                Text(viewModel.person.name)
+            VStack(spacing: 15) {
+                TodoListProfile(person: viewModel.person)
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 200)
-            .background(Color.secondary.opacity(0.12))
-            .cornerRadius(6)
-            .padding()
+            .modifier(CellModifier())
             
             Text("Todo notes")
                 .font(.title2)
@@ -39,6 +35,30 @@ struct TodoListView: View {
         .onAppear(perform: viewModel.request)
         .navigationTitle(viewModel.person.name)
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+}
+
+struct TodoListProfile: View {
+    
+    var person: UserListModel.ViewModel
+    
+    var body: some View {
+        HStack {
+            Rectangle()
+                .fill(Color.secondary)
+                .frame(width: 45, height: 45)
+                .cornerRadius(6)
+            
+            VStack(alignment: .leading, spacing: 6) {
+                Text(person.name)
+                Text(person.email)
+                    .foregroundColor(.secondary)
+            }
+            
+            Spacer()
+        }
+        .padding(10)
     }
     
 }
@@ -66,13 +86,20 @@ struct TodoListCell: View {
             }
             .padding(5)
         }
-        .frame(maxWidth: .infinity)
-        .background(Color.secondary.opacity(0.12))
-        .cornerRadius(6)
-        .padding(.horizontal)
-        .padding(.bottom, 5)
+        .modifier(CellModifier())
     }
     
+}
+
+struct CellModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity)
+            .background(Color.secondary.opacity(0.1))
+            .cornerRadius(6)
+            .padding(.horizontal)
+            .padding(.bottom, 5)
+    }
 }
 
 struct TodoListView_Previews: PreviewProvider {
