@@ -34,12 +34,41 @@ At the same time, this repository shows how easy it is to create unnecessary ent
  </body>
 </html>
 
+## Some shit
+
+Of course, no one forces you to build an application using so many components, and you can limit yourself to something like this:
+
+```Swift
+struct UserListView: View {
+    @State var users = [User]()
+    
+    var body: some View {
+        NavigationStack {
+            List(users) { user in
+                Text(user.name)
+            }
+            .navigationTitle("Users")
+        }
+        .onAppear {
+            Task {
+                let url = URL(string: "https://jsonplaceholder.typicode.com/users")!
+                let (data, _) = try! await URLSession.shared.data(from: url)
+                let users = try! JSONDecoder().decode([User].self, from: data)
+                await MainActor.run(body: {
+                    self.users = users
+                })
+            }
+        }
+    }
+}
+```
+However, architecture is the foundation of the application.
+
 ## Borrowing
 
 The following borrowings were used in this application:
 - **JSONPlaceholder** [Example data](https://jsonplaceholder.typicode.com)
 - **Coordinator-SwiftUI** [Coordinator by Alex Nagy](https://www.youtube.com/watch?v=aaLRST7tHFQ)
-
 
 ## Contribution
 
