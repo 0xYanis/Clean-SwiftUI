@@ -34,7 +34,7 @@ At the same time, this repository shows how easy it is to create unnecessary ent
  </body>
 </html>
 
-## Some shit
+## Thinking out loud
 
 Of course, no one forces you to build an application using so many components, and you can limit yourself to something like this:
 
