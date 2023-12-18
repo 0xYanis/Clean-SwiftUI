@@ -14,13 +14,12 @@ class UserListAssembly {
         let viewModel = UserListViewModel()
         let interactor = UserListInteractor()
         let presenter = UserListPresenter()
-        let view = UserListView(viewModel: viewModel)
         
         viewModel.interactor = interactor
         interactor.presenter = presenter
         presenter.viewModel = viewModel
         
-        return view
+        return UserListView(viewModel: viewModel)
     }
     
 }

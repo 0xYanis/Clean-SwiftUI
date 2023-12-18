@@ -16,10 +16,11 @@ struct UserListView: View {
     private var coordinator: Coordinator
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                currentView
-            }
+        VStack {
+            currentView
+            .searchable(text: $viewModel.searchText)
+            .onAppear(perform: viewModel.request)
+            .navigationTitle("People")
         }
     }
     
@@ -27,20 +28,16 @@ struct UserListView: View {
     var currentView: some View {
         if viewModel.message.isEmpty {
             List(viewModel.people) { person in
-                Button {
-                    coordinator.push(page: .todoList)
+                Button { coordinator.push(page: .todoList)
                 } label: {
                     UserListCell(person: person)
                 }
                 .buttonStyle(.plain)
             }
-            .searchable(text: $viewModel.searchText)
-            .onAppear(perform: viewModel.request)
-            .navigationTitle("People")
+            
         } else {
             ProgressView()
             Text(viewModel.message)
-                .searchable(text: $viewModel.searchText)
         }
     }
     
