@@ -10,7 +10,7 @@ import SwiftUI
 class UserListAssembly {
     static let shared = UserListAssembly()
     
-    func build(by coordinator: Coordinator) -> some View {
+    func build() -> some View {
         let viewModel = UserListViewModel()
         let interactor = UserListInteractor()
         let presenter = UserListPresenter()

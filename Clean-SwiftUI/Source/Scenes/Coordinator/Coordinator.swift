@@ -38,7 +38,7 @@ class Coordinator: ObservableObject {
     func build(page: Page) -> some View {
         switch page {
         case .userList:
-            UserListAssembly.shared.build(by: self)
+            UserListAssembly.shared.build()
         case .todoList:
             EmptyView()
         }
