@@ -18,7 +18,7 @@ class TodoListPresenter: TodoListPresentationLogic {
     func presentTodos(_ response: [TodoListModel.Response]) {
         let models = response.map {
             TodoListModel.ViewModel(
-                id: $0.id,
+                id: $0.id - (response.first?.id ?? 0) + 1,
                 title: $0.title,
                 completed: $0.completed)
         }
