@@ -120,7 +120,6 @@
 			children = (
 				097251962B2F09A10059A62C /* Scenes */,
 				097251982B2F09B30059A62C /* Services */,
-				097251972B2F09AB0059A62C /* Managers */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -133,13 +132,6 @@
 				0972519A2B2F0B010059A62C /* TodoList */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		097251972B2F09AB0059A62C /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		097251982B2F09B30059A62C /* Services */ = {

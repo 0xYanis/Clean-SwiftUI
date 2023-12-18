@@ -34,7 +34,7 @@ class TodoListViewModel: ObservableObject {
 extension TodoListViewModel: TodoListDisplayLogic {
     
     func displayTodos(_ viewModel: [TodoListModel.ViewModel]) {
-        
+        self.todos = viewModel
     }
     
 }
