@@ -51,7 +51,7 @@ struct UserListView: View {
 #if DEBUG
 struct UserListView_Previews: PreviewProvider {
     static var previews: some View {
-        UserListAssembly.shared.build()
+        ContentView()
     }
 }
 #endif

@@ -11,7 +11,7 @@ import SwiftUI
 struct Clean_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            UserListAssembly.shared.build()
+            ContentView()
         }
     }
 }
