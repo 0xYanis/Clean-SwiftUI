@@ -11,8 +11,10 @@ class UserListAssembly {
     static let shared = UserListAssembly()
     
     func build() -> some View {
+        let service = ApiServiceImpl()
+        let repository = UserListRepositoryImpl(apiService: service)
+        let interactor = UserListInteractor(webRepository: repository)
         let viewModel = UserListViewModel()
-        let interactor = UserListInteractor()
         let presenter = UserListPresenter()
         
         viewModel.interactor = interactor

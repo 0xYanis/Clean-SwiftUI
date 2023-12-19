@@ -14,17 +14,17 @@ protocol TodoListBusinessLogic: AnyObject {
 class TodoListInteractor: TodoListBusinessLogic {
     
     var presenter: TodoListPresentationLogic?
-    private var webRepository: TodoListRepository?
+    private let webRepository: TodoListRepository
     
-    init() {
-        self.webRepository = TodoListRepositoryImpl()
+    init(webRepository: TodoListRepository) {
+        self.webRepository = webRepository
     }
     
     func fetchTodos(_ request: TodoListModel.Request) {
         Task {
-            let list = await webRepository?.fetchTodos(userId: request.userId)
+            let list = await webRepository.fetchTodos(userId: request.userId)
             await MainActor.run(body: {
-                presenter?.presentTodos(list ?? [])
+                presenter?.presentTodos(list)
             })
         }
     }

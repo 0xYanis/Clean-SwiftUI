@@ -11,8 +11,10 @@ class TodoListAssembly {
     static let shared = TodoListAssembly()
     
     func build(for person: UserListModel.ViewModel) -> some View {
+        let service = ApiServiceImpl()
+        let repository = TodoListRepositoryImpl(apiService: service)
+        let interactor = TodoListInteractor(webRepository: repository)
         let viewModel = TodoListViewModel(person: person)
-        let interactor = TodoListInteractor()
         let presenter = TodoListPresenter()
         
         viewModel.interactor = interactor

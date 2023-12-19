@@ -13,10 +13,10 @@ protocol TodoListRepository: AnyObject {
 
 class TodoListRepositoryImpl: TodoListRepository {
     
-    private var apiService: ApiService
+    private let apiService: ApiService
     
-    init() {
-        self.apiService = ApiServiceImpl()
+    init(apiService: ApiService) {
+        self.apiService = apiService
     }
     
     func fetchTodos(userId: Int) async -> [TodoListModel.Response] {

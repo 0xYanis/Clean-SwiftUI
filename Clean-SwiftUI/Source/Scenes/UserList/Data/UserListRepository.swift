@@ -13,10 +13,10 @@ protocol UserListRepository: AnyObject {
 
 final class UserListRepositoryImpl: UserListRepository {
     
-    private var apiService: ApiService
+    private let apiService: ApiService
     
-    init() {
-        self.apiService = ApiServiceImpl()
+    init(apiService: ApiService) {
+        self.apiService = apiService
     }
     
     func fetchUserList(query: String) async -> [UserListModel.Response] {

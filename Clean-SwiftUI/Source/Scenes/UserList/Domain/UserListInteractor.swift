@@ -14,15 +14,15 @@ protocol UserListBusinessLogic: AnyObject {
 class UserListInteractor: UserListBusinessLogic {
     
     var presenter: UserListPresentationLogic?
-    private var webRepository: UserListRepository?
+    private let webRepository: UserListRepository
     
-    init() {
-        self.webRepository = UserListRepositoryImpl()
+    init(webRepository: UserListRepository) {
+        self.webRepository = webRepository
     }
     
     func searchPeople(_ request: UserListModel.Request) {
         Task {
-            let list = await webRepository?.fetchUserList(query: request.text) ?? []
+            let list = await webRepository.fetchUserList(query: request.text)
             await validation(list: list)
         }
     }
