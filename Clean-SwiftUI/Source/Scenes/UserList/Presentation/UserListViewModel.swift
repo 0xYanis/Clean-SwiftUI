@@ -14,17 +14,25 @@ protocol UserListDisplayLogic: AnyObject {
 
 class UserListViewModel: ObservableObject {
     
+    // MARK: - Public properties
+    
     var interactor: UserListBusinessLogic?
+    
+    // MARK: - Publishers
     
     @Published var people = [UserListModel.ViewModel]()
     @Published var searchText = "" { didSet { request() } }
     @Published var message = ""
+    
+    // MARK: - Public methods
     
     func request() {
         interactor?.searchPeople(.init(text: searchText))
     }
     
 }
+
+// MARK: - UserListDisplayLogic
 
 extension UserListViewModel: UserListDisplayLogic {
     

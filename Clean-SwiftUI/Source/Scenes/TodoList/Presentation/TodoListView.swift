@@ -13,7 +13,7 @@ struct TodoListView: View {
     var viewModel: TodoListViewModel
     
     @EnvironmentObject
-    var coordinator: Coordinator
+    private var coordinator: Coordinator
     
     var body: some View {
         List {
@@ -56,11 +56,13 @@ struct TodoListProfile: View {
                     .fill(Color.secondary.opacity(0.15))
                     .frame(width: 45, height: 45)
                     .cornerRadius(6)
+                
                 Text("🤗")
             }
             
             VStack(alignment: .leading, spacing: 6) {
                 Text(person.name)
+                
                 Text(person.email)
                     .foregroundColor(.secondary)
             }
@@ -69,11 +71,4 @@ struct TodoListProfile: View {
         }
     }
     
-}
-
-struct TodoListView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        ContentView()
-    }
 }

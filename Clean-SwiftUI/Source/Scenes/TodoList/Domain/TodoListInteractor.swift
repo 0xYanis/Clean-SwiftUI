@@ -14,7 +14,7 @@ protocol TodoListBusinessLogic: AnyObject {
 class TodoListInteractor: TodoListBusinessLogic {
     
     var presenter: TodoListPresentationLogic?
-    var webRepository: TodoListRepository?
+    private var webRepository: TodoListRepository?
     
     init() {
         self.webRepository = TodoListRepositoryImpl()

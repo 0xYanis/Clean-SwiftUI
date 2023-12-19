@@ -13,23 +13,33 @@ protocol TodoListDisplayLogic: AnyObject {
 
 class TodoListViewModel: ObservableObject {
     
+    // MARK: - Public properties
+    
     var interactor: TodoListBusinessLogic?
+    
+    // MARK: - Publishers
     
     @Published var todos = [TodoListModel.ViewModel]()
     @Published var person: UserListModel.ViewModel
-    @Published var searchText = "" {
-        didSet { search() }
-    }
+    @Published var searchText = "" { didSet { search() } }
+    
+    // MARK: - Private methods
     
     private var allTodos = [TodoListModel.ViewModel]()
+    
+    // MARK: - Lifecycle
     
     init(person: UserListModel.ViewModel) {
         self.person = person
     }
     
+    // MARK: - Public methods
+    
     func request() {
         interactor?.fetchTodos(.init(userId: person.id))
     }
+    
+    // MARK: - Private methods
     
     private func search() {
         if searchText.isEmpty {
@@ -43,6 +53,8 @@ class TodoListViewModel: ObservableObject {
     }
     
 }
+
+// MARK: - TodoListDisplayLogic
 
 extension TodoListViewModel: TodoListDisplayLogic {
     

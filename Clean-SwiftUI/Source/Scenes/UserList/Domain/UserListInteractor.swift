@@ -14,7 +14,7 @@ protocol UserListBusinessLogic: AnyObject {
 class UserListInteractor: UserListBusinessLogic {
     
     var presenter: UserListPresentationLogic?
-    var webRepository: UserListRepository?
+    private var webRepository: UserListRepository?
     
     init() {
         self.webRepository = UserListRepositoryImpl()
@@ -29,11 +29,7 @@ class UserListInteractor: UserListBusinessLogic {
     
     private func validation(list: [UserListModel.Response]) async {
         await MainActor.run {
-            if list.isEmpty {
-                presenter?.presentError()
-            } else {
-                presenter?.presentPeople(list)
-            }
+            list.isEmpty ? presenter?.presentError() : presenter?.presentPeople(list)
         }
     }
     

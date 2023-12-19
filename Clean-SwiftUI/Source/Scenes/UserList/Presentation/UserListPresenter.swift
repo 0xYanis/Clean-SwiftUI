@@ -20,7 +20,7 @@ class UserListPresenter: UserListPresentationLogic {
         let models = response.map {
             UserListModel.ViewModel(
                 id: $0.id,
-                name: $0.name,
+                name: $0.name.capitalized,
                 username: $0.username,
                 email: $0.email,
                 address: $0.address.street + ", " + $0.address.city,
