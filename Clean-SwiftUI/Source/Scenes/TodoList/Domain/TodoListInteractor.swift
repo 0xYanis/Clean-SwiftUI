@@ -23,10 +23,14 @@ class TodoListInteractor: TodoListBusinessLogic {
     func fetchTodos(_ request: TodoListModel.Request) {
         Task {
             let list = await webRepository.fetchTodos(userId: request.userId)
-            await MainActor.run(body: {
-                presenter?.presentTodos(list)
-            })
+            await present(todos: list)
         }
+    }
+    
+    private func present(todos: [TodoListModel.Response]) async {
+        await MainActor.run(body: {
+            presenter?.presentTodos(todos)
+        })
     }
     
 }
