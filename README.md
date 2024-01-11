@@ -76,4 +76,4 @@ If you have any suggestions for improving this sample, please create an issue or
 
 ## License
 
-This project is licensed under the [MIT License](httpsopensource.org/licenses/MIT).
+This project is licensed under the [MIT License](https://github.com/0xYanis/Clean-SwiftUI/blob/main/LICENSE).
