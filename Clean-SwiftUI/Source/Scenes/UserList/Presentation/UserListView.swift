@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct UserListView: View {
-    
-    @StateObject
-    var viewModel: UserListViewModel
-    
-    @EnvironmentObject
-    private var coordinator: Coordinator
+    @StateObject var viewModel: UserListViewModel
+    @EnvironmentObject private var coordinator: Coordinator
     
     var body: some View {
         VStack {

@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct TodoListView: View {
-    
-    @StateObject
-    var viewModel: TodoListViewModel
-    
-    @EnvironmentObject
-    private var coordinator: Coordinator
+    @StateObject var viewModel: TodoListViewModel
+    @EnvironmentObject private var coordinator: Coordinator
     
     var body: some View {
         List {

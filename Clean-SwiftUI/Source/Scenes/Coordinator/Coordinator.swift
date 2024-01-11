@@ -12,10 +12,8 @@ enum Page: Hashable {
     case todoList(person: UserListModel.ViewModel)
 }
 
-class Coordinator: ObservableObject {
-    
-    @Published
-    var path = NavigationPath()
+final class Coordinator: ObservableObject {
+    @Published var path = NavigationPath()
     
     func push(page: Page) {
         path.append(page)
@@ -34,5 +32,4 @@ class Coordinator: ObservableObject {
             TodoListAssembly.shared.build(for: person)
         }
     }
-    
 }
