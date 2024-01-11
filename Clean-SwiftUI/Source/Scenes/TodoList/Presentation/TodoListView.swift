@@ -21,18 +21,7 @@ struct TodoListView: View {
                 TodoListProfile(person: viewModel.person)
             }
             
-            Section {
-                ForEach(viewModel.todos) { todo in
-                    Label {
-                        Text(todo.title)
-                    } icon: {
-                        systemImage(completed: todo.completed)
-                    }
-                }
-            } header: {
-                Text("Todo")
-            }
-
+            todoList()
         }
         .onAppear(perform: viewModel.request)
         .navigationTitle(viewModel.person.name)
@@ -42,6 +31,26 @@ struct TodoListView: View {
     private func systemImage(completed: Bool) -> some View {
         Image(systemName: completed ? "checkmark.seal.fill" : "xmark.seal")
             .foregroundStyle(.white, completed ? .green : .red)
+    }
+    
+    @ViewBuilder
+    private func todoList() -> some View {
+        Section {
+            if viewModel.todos.isEmpty {
+                ProgressView()
+                    .frame(maxWidth: .infinity, alignment: .center)
+            } else {
+                ForEach(viewModel.todos) { todo in
+                    Label {
+                        Text(todo.title)
+                    } icon: {
+                        systemImage(completed: todo.completed)
+                    }
+                }
+            }
+        } header: {
+            Text("Todo")
+        }
     }
     
 }
